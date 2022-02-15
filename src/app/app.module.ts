@@ -140,6 +140,8 @@ import { LoginComponent } from './components/login/login.component';
 import { ErrorComponent } from './components/error/error.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { AccessComponent } from './components/access/access.component';
+import { AuthModule } from './auth/auth.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
     imports: [
@@ -230,6 +232,8 @@ import { AccessComponent } from './components/access/access.component';
         VirtualScrollerModule,
         AppCodeModule,
         StyleClassModule,
+        AuthModule,
+        FontAwesomeModule
     ],
     declarations: [
         AppComponent,

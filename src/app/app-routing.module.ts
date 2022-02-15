@@ -1,4 +1,4 @@
-import { RouterModule } from '@angular/router';
+import { PreloadAllModules, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { FormLayoutComponent } from './components/formlayout/formlayout.component';
@@ -64,8 +64,14 @@ import { AccessComponent } from './components/access/access.component';
             {path:'pages/error', component: ErrorComponent},
             {path:'pages/notfound', component: NotfoundComponent},
             {path:'pages/access', component: AccessComponent},
-            {path: '**', redirectTo: 'pages/notfound'},
-        ], {scrollPositionRestoration: 'enabled', anchorScrolling:'enabled'})
+            //{path: '**', redirectTo: 'pages/notfound'},
+        ], 
+        {
+            scrollPositionRestoration: 'enabled', 
+            anchorScrolling:'enabled',
+            preloadingStrategy: PreloadAllModules,
+            relativeLinkResolution: 'legacy'
+        }),
     ],
     exports: [RouterModule]
 })
