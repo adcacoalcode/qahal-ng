@@ -28,6 +28,7 @@ import { LoginComponent } from './components/login/login.component';
 import { ErrorComponent } from './components/error/error.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { AccessComponent } from './components/access/access.component';
+import { AuthGuard } from './core/guards/auth.guard';
 @NgModule({
     imports: [
         RouterModule.forRoot([
@@ -35,6 +36,10 @@ import { AccessComponent } from './components/access/access.component';
                 path: '', component: AppMainComponent,
                 children: [
                     {path: '', component: DashboardComponent},
+                    {
+                        path: 'igrejas',
+                        loadChildren: () => import('./modules/igreja/igreja.module').then(m => m.IgrejaModule)
+                    },
                     {path: 'uikit/formlayout', component: FormLayoutComponent},
                     {path: 'uikit/input', component: InputComponent},
                     {path: 'uikit/floatlabel', component: FloatLabelComponent},
@@ -58,6 +63,8 @@ import { AccessComponent } from './components/access/access.component';
                     {path: 'blocks', component: BlocksComponent},
                     {path: 'documentation', component: DocumentationComponent}
                 ],
+                canActivate: [AuthGuard],
+                canActivateChild: [AuthGuard]
             },
             {path:'pages/landing', component: LandingComponent},
             {path:'pages/login', component: LoginComponent},
