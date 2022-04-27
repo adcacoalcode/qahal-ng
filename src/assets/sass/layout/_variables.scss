@@ -2,3 +2,14 @@
 $fontSize:10px;
 $borderRadius:12px;
 $transitionDuration:.2s;
+$sm:576px !default;
+$md:768px !default;
+$lg:992px !default;
+$xl:1200px !default;
+
+$breakpoints: (
+    'sm': $sm,
+    'md': $md,
+    'lg': $lg,
+    'xl': $xl
+) !default;

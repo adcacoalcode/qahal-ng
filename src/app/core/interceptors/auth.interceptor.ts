@@ -20,6 +20,12 @@ export class AuthInterceptor implements HttpInterceptor {
       // O request é imutavel, ou seja, não é possível mudar nada
       // Faço o clone para conseguir mudar as propriedades
       // Passo o token de autenticação no header
+
+      // NÃO PASSAR TOKEN SE FOR DE TERCEIROS
+      if (req.url.includes('viacep')) { // viacep, CID-10
+        return next.handle(req);
+      }    
+  
       request = req.clone({
         headers: req.headers.set('Authorization', `Bearer ${token}`)
       });

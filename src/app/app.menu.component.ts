@@ -27,13 +27,22 @@ export class AppMenuComponent implements OnInit {
             {
                 label: 'Home',
                 items:[
-                    {label: 'Dashboard',icon: 'pi pi-fw pi-home', routerLink: ['/']}
+                    {label: 'Dashboard',icon: 'pi pi-fw pi-table', routerLink: ['/']}
                 ]
             },
             {
                 label: 'Secretaria',
                 items:[
                     {label: 'Igrejas',icon: 'pi pi-fw pi-home', routerLink: ['/igrejas']}
+                ]
+            },
+            {
+                label: 'Membro',
+                items:[
+                    {label: 'Membros',icon: 'pi pi-fw pi-id-card', routerLink: ['/membros']},
+                    {label: 'Cargos',icon: 'pi pi-fw pi-circle', routerLink: ['/cargos']},
+                    {label: 'Funções',icon: 'pi pi-fw pi-circle', routerLink: ['/funcoes']},
+                    {label: 'Grupos',icon: 'pi pi-fw pi-circle', routerLink: ['/grupos']},
                 ]
             },
             {

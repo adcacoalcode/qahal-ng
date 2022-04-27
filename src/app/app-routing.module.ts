@@ -31,14 +31,32 @@ import { AccessComponent } from './components/access/access.component';
 import { AuthGuard } from './core/guards/auth.guard';
 @NgModule({
     imports: [
-        RouterModule.forRoot([
+        RouterModule.forRoot(
+            [
             {
+                
                 path: '', component: AppMainComponent,
                 children: [
                     {path: '', component: DashboardComponent},
                     {
                         path: 'igrejas',
                         loadChildren: () => import('./modules/igreja/igreja.module').then(m => m.IgrejaModule)
+                    },
+                    {
+                        path: 'cargos',
+                        loadChildren: () => import('./modules/cargo/cargo.module').then(m => m.CargoModule)
+                    },
+                    {
+                        path: 'funcoes',
+                        loadChildren: () => import('./modules/funcao/funcao.module').then(m => m.FuncaoModule)
+                    },
+                    {
+                        path: 'grupos',
+                        loadChildren: () => import('./modules/grupo/grupo.module').then(m => m.GrupoModule)
+                    },
+                    {
+                        path: 'membros',
+                        loadChildren: () => import('./modules/membro/membro.module').then(m => m.MembroModule)
                     },
                     {path: 'uikit/formlayout', component: FormLayoutComponent},
                     {path: 'uikit/input', component: InputComponent},
@@ -77,7 +95,8 @@ import { AuthGuard } from './core/guards/auth.guard';
             scrollPositionRestoration: 'enabled', 
             anchorScrolling:'enabled',
             preloadingStrategy: PreloadAllModules,
-            relativeLinkResolution: 'legacy'
+            relativeLinkResolution: 'legacy',
+            useHash: true
         }),
     ],
     exports: [RouterModule]

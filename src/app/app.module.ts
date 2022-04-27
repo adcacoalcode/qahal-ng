@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -142,6 +142,12 @@ import { NotfoundComponent } from './components/notfound/notfound.component';
 import { AccessComponent } from './components/access/access.component';
 import { AuthModule } from './auth/auth.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { AuthInterceptor } from './core/interceptors/auth.interceptor';
+import { CargoModule } from './modules/cargo/cargo.module';
+import { DialogService } from 'primeng/dynamicdialog';
+import { FuncaoModule } from './modules/funcao/funcao.module';
+import { GrupoModule } from './modules/grupo/grupo.module';
+import { MembroModule } from './modules/membro/membro.module';
 
 @NgModule({
     imports: [
@@ -233,7 +239,11 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
         AppCodeModule,
         StyleClassModule,
         AuthModule,
-        FontAwesomeModule
+        FontAwesomeModule,
+        CargoModule,
+        FuncaoModule,
+        GrupoModule,
+        MembroModule,
     ],
     declarations: [
         AppComponent,
@@ -279,9 +289,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
         AccessComponent,
     ],
     providers: [
-        {provide: LocationStrategy, useClass: HashLocationStrategy},
+        { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
         CountryService, CustomerService, EventService, IconService, NodeService,
-        PhotoService, ProductService, MenuService, ConfigService
+        PhotoService, ProductService, MenuService, ConfigService, DialogService
     ],
     bootstrap: [AppComponent]
 })

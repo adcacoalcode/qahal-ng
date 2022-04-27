@@ -3,10 +3,12 @@ import { ConfirmationService, MessageService } from 'primeng/api';
 import { Product } from '../../api/product';
 import { AppMainComponent } from 'src/app/app.main.component';
 import { ProductService } from '../../service/productservice';
+import { DialogService } from 'primeng/dynamicdialog';
+import { TableComponent } from '../table/table.component';
 
 @Component({
     templateUrl: './overlays.component.html',
-    providers: [ConfirmationService, MessageService]
+    providers: [ConfirmationService, MessageService, DialogService]
 })
 export class OverlaysComponent implements OnInit {
 
@@ -28,7 +30,8 @@ export class OverlaysComponent implements OnInit {
 
     visibleSidebar5;
 
-    constructor(private productService: ProductService, private confirmationService: ConfirmationService, private messageService: MessageService, public appMain: AppMainComponent) {}
+    constructor(private productService: ProductService, private confirmationService: ConfirmationService,
+        private dialogService: DialogService, private messageService: MessageService, public appMain: AppMainComponent) {}
 
     ngOnInit() {
         this.productService.getProductsSmall().then(products => this.products = products);
@@ -50,6 +53,14 @@ export class OverlaysComponent implements OnInit {
             source: 'assets/demo/images/sopranos/sopranos4.jpg',
             thumbnail: 'assets/demo/images/sopranos/sopranos4_small.jpg', title: 'Sopranos 4'
         });
+
+        this.dialogService.open(TableComponent, {
+            data: {
+              id: undefined
+            },
+            header: 'Igreja',
+            width: '70%'
+          })
     }
 
     confirm1() {
