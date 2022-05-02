@@ -88,7 +88,7 @@ import { TreeSelectModule } from 'primeng/treeselect';
 import { TreeTableModule } from 'primeng/treetable';
 import { VirtualScrollerModule } from 'primeng/virtualscroller';
 import { BlockViewer } from './components/blockviewer/blockviewer.component';
- 
+
 import { AppCodeModule } from './components/app-code/app.code.component';
 import { AppComponent } from './app.component';
 import { AppMainComponent } from './app.main.component';
@@ -148,6 +148,7 @@ import { DialogService } from 'primeng/dynamicdialog';
 import { FuncaoModule } from './modules/funcao/funcao.module';
 import { GrupoModule } from './modules/grupo/grupo.module';
 import { MembroModule } from './modules/membro/membro.module';
+import { ReuniaoModule } from './modules/reuniao/reuniao.module';
 
 @NgModule({
     imports: [
@@ -244,6 +245,7 @@ import { MembroModule } from './modules/membro/membro.module';
         FuncaoModule,
         GrupoModule,
         MembroModule,
+        ReuniaoModule,
     ],
     declarations: [
         AppComponent,
