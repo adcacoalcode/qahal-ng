@@ -34,7 +34,7 @@ import { AuthGuard } from './core/guards/auth.guard';
         RouterModule.forRoot(
             [
             {
-                
+
                 path: '', component: AppMainComponent,
                 children: [
                     {path: '', component: DashboardComponent},
@@ -57,6 +57,10 @@ import { AuthGuard } from './core/guards/auth.guard';
                     {
                         path: 'membros',
                         loadChildren: () => import('./modules/membro/membro.module').then(m => m.MembroModule)
+                    },
+                    {
+                        path: 'reunioes',
+                        loadChildren: () => import('./modules/reuniao/reuniao.module').then(m => m.ReuniaoModule)
                     },
                     {path: 'uikit/formlayout', component: FormLayoutComponent},
                     {path: 'uikit/input', component: InputComponent},
@@ -90,9 +94,9 @@ import { AuthGuard } from './core/guards/auth.guard';
             {path:'pages/notfound', component: NotfoundComponent},
             {path:'pages/access', component: AccessComponent},
             //{path: '**', redirectTo: 'pages/notfound'},
-        ], 
+        ],
         {
-            scrollPositionRestoration: 'enabled', 
+            scrollPositionRestoration: 'enabled',
             anchorScrolling:'enabled',
             preloadingStrategy: PreloadAllModules,
             relativeLinkResolution: 'legacy',

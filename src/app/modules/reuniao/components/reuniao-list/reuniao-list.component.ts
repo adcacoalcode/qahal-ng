@@ -31,7 +31,7 @@ export class ReuniaoListComponent implements OnInit {
       this.userInfo = this.accountService.getUserInfo();
 
       this.cols = [
-        { field: 'nome', header: 'Nome', width: '85%' },
+        { field: 'titulo', header: 'Titulo', width: '85%' },
         { field: 'acao', header: 'Ações', width: '15%' },
       ];
 

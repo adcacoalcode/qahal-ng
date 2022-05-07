@@ -44,14 +44,34 @@ export class ReuniaoFormComponent implements OnInit {
   configuraForm() {
       this.form = new FormGroup({
           id: new FormControl(null),
-          nome: new FormControl('', [Validators.required]),
+          titulo: new FormControl('', [Validators.required]),
+          assunto: new FormControl(''),
+          conteudo: new FormControl(''),
+          data: new FormControl(''),
+          horarioIni: new FormControl(''),
+          horarioFim: new FormControl(''),
+          prensencaAberta: new FormControl(false),
+          responsavel: new FormControl(null),
+          cargo: new FormControl(null),
+          funcao: new FormControl(null),
+          grupo: new FormControl(null),
           igrejagrupo: new FormControl(this.userInfo.igrejagrupo),
       });
   }
 
   popularForm(data: Reuniao) {
       this.form.controls['id'].setValue(data.id);
-      this.form.controls['nome'].setValue(data.nome);
+      this.form.controls['titulo'].setValue(data.titulo);
+      this.form.controls['assunto'].setValue(data.assunto);
+      this.form.controls['conteudo'].setValue(data.conteudo);
+      this.form.controls['data'].setValue(data.data);
+      this.form.controls['horarioIni'].setValue(data.horarioIni);
+      this.form.controls['horarioFim'].setValue(data.horarioFim);
+      this.form.controls['prensencaAberta'].setValue(data.prensencaAberta);
+      this.form.controls['responsavel'].setValue(data.responsavel);
+      this.form.controls['cargo'].setValue(data.cargo);
+      this.form.controls['funcao'].setValue(data.funcao);
+      this.form.controls['grupo'].setValue(data.grupo);
       this.form.controls['igrejagrupo'].setValue(data.igrejagrupo);
   }
 
