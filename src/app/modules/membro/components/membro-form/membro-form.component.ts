@@ -33,6 +33,7 @@ export class MembroFormComponent implements OnInit {
   cargos: SelectItem[];
   grupos: SelectItem[];
   funcoes: SelectItem[];
+  tipos: SelectItem[];
 
 
   constructor(
@@ -80,6 +81,12 @@ export class MembroFormComponent implements OnInit {
         {label: 'O+', value: 'O+'},
         {label: 'O-', value: 'O-'},
       ];
+
+      this.tipos = [
+        {label: 'Membro', value: 'Membro'},
+        {label: 'Congregado', value: 'Congregado'},
+        {label: 'Visitante', value: 'Visitante'},
+  ];
   }
 
   ngOnInit(): void {
@@ -135,7 +142,7 @@ export class MembroFormComponent implements OnInit {
           batismoIgreja: new FormControl(''),
           convertido: new FormControl(false),
           batizado: new FormControl(false),
-          tipo: new FormControl(''),
+          tipo: new FormControl('Membro'),
           convencao: new FormControl(''),
           entradaData: new FormControl(''),
           entradaMotivo: new FormControl(''),
@@ -148,6 +155,9 @@ export class MembroFormComponent implements OnInit {
           funcoes: new FormControl(null),
           cargo: new FormControl(null),
           igrejagrupo: new FormControl(this.userInfo.igrejagrupo),
+          ordenacaoData: new FormControl(''),
+          acompanhadorNome: new FormControl(''),
+          discipuladorNome: new FormControl(''),
       });
   }
 
@@ -213,6 +223,13 @@ export class MembroFormComponent implements OnInit {
         this.form.controls['funcoes'].setValue(data.funcoes);
         this.form.controls['cargo'].setValue(data.cargo);
         this.form.controls['igrejagrupo'].setValue(data.igrejagrupo);
+        if(data.ordenacaoData) {
+            this.form.controls['ordenacaoData'].setValue(moment(data.ordenacaoData).format('DD/MM/YYYY'));
+        } else {
+            this.form.controls['ordenacaoData'].setValue(data.ordenacaoData);
+        }
+        this.form.controls['acompanhadorNome'].setValue(data.acompanhadorNome);
+        this.form.controls['discipuladorNome'].setValue(data.discipuladorNome);
   }
 
   formataRegistro() {
@@ -236,6 +253,10 @@ export class MembroFormComponent implements OnInit {
 
       if(this.reg.saidaData) {
         this.reg.saidaData = moment(this.reg.saidaData, 'DD/MM/YYYY').toDate();
+      }
+
+      if(this.reg.ordenacaoData) {
+        this.reg.ordenacaoData = moment(this.reg.ordenacaoData, 'DD/MM/YYYY').toDate();
       }
 
       if(!this.reg.secretkey) {

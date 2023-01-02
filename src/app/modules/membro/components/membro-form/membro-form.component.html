@@ -2,52 +2,58 @@
     <p-tabView>
         <p-tabPanel header="Perfil">
             <div class="grid p-fluid mt-0">
-                <div class="field col-12 lg:col-12">
+                <div class="field col-12 lg:col-6">
                     <span class="p-float-label">
                         <input type="text" pInputText formControlName="nome">
                         <label>Nome*</label>
                     </span>
                 </div>
-                <div class="field col-12 lg:col-12">
+                <div class="field col-12 lg:col-3">
                     <span class="p-float-label">
                         <p-dropdown [options]="sexos"  formControlName="sexo" placeholder="Selecione"></p-dropdown>
                         <label>Sexo</label>
                     </span>
                 </div>
-                <div class="field col-12 lg:col-12">
-                    <span class="p-float-label">
+                <div class="field col-12 lg:col-3">
+                    <span class="p-float-label q-focus">
                         <p-inputMask mask="99/99/9999" formControlName="nascimento" placeholder="99/99/9999"></p-inputMask>
                         <label>Data de Nascimento</label>
                     </span>
                 </div>
-                <div class="field col-12 lg:col-12">
+                <div class="field col-12 lg:col-4">
                     <span class="p-float-label">
                         <p-dropdown [options]="estadoCivis"  formControlName="estadoCivil" placeholder="Selecione"></p-dropdown>
                         <label>Estado Civil</label>
                     </span>
                 </div>
-                <div class="field col-12 lg:col-12">
+                <div class="field col-12 lg:col-4">
                     <span class="p-float-label">
                         <input type="text" pInputText formControlName="naturalidade">
                         <label>Naturalidade</label>
                     </span>
                 </div>
-                <div class="field col-12 lg:col-12">
+                <div class="field col-12 lg:col-4">
                     <span class="p-float-label">
                         <input type="text" pInputText formControlName="identidade">
                         <label>Identidade</label>
                     </span>
                 </div>
-                <div class="field col-12 lg:col-12">
-                    <span class="p-float-label">
+                <div class="field col-12 lg:col-4">
+                    <span class="p-float-label q-focus">
                         <p-inputMask mask="999.999.999-99" formControlName="cpf"></p-inputMask>
                         <label>CPF</label>
                     </span>
                 </div>
-                <div class="field col-12 lg:col-12">
+                <div class="field col-12 lg:col-4">
                     <span class="p-float-label">
                         <p-dropdown [options]="escolaridades"  formControlName="escolaridade" placeholder="Selecione"></p-dropdown>
                         <label>Escolaridade</label>
+                    </span>
+                </div>
+                <div class="field col-12 lg:col-4">
+                    <span class="p-float-label">
+                        <p-dropdown [options]="tipoSanguineos"  formControlName="tipoSanguineo" placeholder="Selecione"></p-dropdown>
+                        <label>Tipo Sanguíneo</label>
                     </span>
                 </div>
                 <div class="field col-12 lg:col-12">
@@ -55,12 +61,6 @@
                         <input type="text" pInputText formControlName="profissao">
                         <label>Profissão</label>
                     </span>
-                </div>
-                <div class="field col-12 lg:col-12">
-                    <span class="p-float-label">
-                        <p-dropdown [options]="tipoSanguineos"  formControlName="tipoSanguineo" placeholder="Selecione"></p-dropdown>
-                        <label>Tipo Sanguíneo</label>
-                    </span> 
                 </div>
                 <div class="field col-12 lg:col-12">
                     <span class="p-float-label">
@@ -81,61 +81,61 @@
                         <label>Secret Key</label>
                     </span>
                 </div>
-                <div class="field col-12 lg:col-12">
+                <div class="field col-12 lg:col-6">
                     <span class="p-float-label">
                         <input type="email" pInputText formControlName="email">
                         <label>E-mail</label>
                     </span>
                 </div>
-                <div class="field col-12 lg:col-12">
+                <div class="field col-12 lg:col-6">
                     <span class="p-float-label">
                         <input type="password" pInputText formControlName="password" [autocomplete]="false">
                         <label>Senha</label>
                     </span>
                 </div>
-                <div class="field col-12 lg:col-12">
-                    <span class="p-float-label">
+                <div class="field col-12 lg:col-6">
+                    <span class="p-float-label q-focus">
                         <p-inputMask mask="(99)9999-9999" formControlName="telefone"></p-inputMask>
                         <label>Telefone</label>
                     </span>
                 </div>
-                <div class="field col-12 lg:col-12">
-                    <span class="p-float-label">
+                <div class="field col-12 lg:col-6">
+                    <span class="p-float-label q-focus">
                         <p-inputMask mask="(99)99999-9999" formControlName="celular"></p-inputMask>
                         <label>Celular</label>
                     </span>
                 </div>
-                <div class="field col-12 lg:col-12">
-                    <span class="p-float-label">
+                <div class="field col-12 lg:col-4">
+                    <span class="p-float-label q-focus">
                         <p-inputMask mask="99999-999" formControlName="cep" (onBlur)="searchCep()"></p-inputMask>
                         <label>CEP</label>
                     </span>
                 </div>
-                <div class="field col-12 lg:col-12">
+                <div class="field col-12 lg:col-8">
                     <span class="p-float-label">
                         <input type="text" pInputText formControlName="logradouro">
                         <label>Endereço</label>
                     </span>
                 </div>
-                <div class="field col-12 lg:col-12">
+                <div class="field col-12 lg:col-3">
                     <span class="p-float-label">
                         <input type="text" pInputText formControlName="numero">
                         <label>Número</label>
                     </span>
                 </div>
-                <div class="field col-12 lg:col-12">
+                <div class="field col-12 lg:col-3">
                     <span class="p-float-label">
                         <input type="text" pInputText formControlName="bairro">
                         <label>Bairro</label>
                     </span>
                 </div>
-                <div class="field col-12 lg:col-12">
+                <div class="field col-12 lg:col-3">
                     <span class="p-float-label">
                         <input type="text" pInputText formControlName="localidade">
                         <label>Cidade</label>
                     </span>
                 </div>
-                <div class="field col-12 lg:col-12">
+                <div class="field col-12 lg:col-3">
                     <span class="p-float-label">
                         <p-dropdown [options]="ufs"  formControlName="uf" placeholder="Selecione" [filter]="true"></p-dropdown>
                         <label>UF</label>
@@ -163,7 +163,7 @@
                         <label>Nome da Mãe</label>
                     </span>
                 </div>
-                
+
             </div>
         </p-tabPanel>
         <p-tabPanel header="Ministério">
@@ -174,45 +174,74 @@
                         <label>Igreja</label>
                     </span>
                 </div>
-                <div class="field col-12 lg:col-12">
+                <div class="field col-12 lg:col-3">
                     <span class="p-float-label">
                         <p-dropdown [options]="cargos"  formControlName="cargo" [autoDisplayFirst]="false" [filter]="true" appendTo="body"></p-dropdown>
                         <label>Cargo</label>
                     </span>
                 </div>
-                <div class="field col-12 lg:col-12">
+                <div class="field col-12 lg:col-3">
                     <span class="p-float-label">
                         <p-multiSelect [options]="funcoes" formControlName="funcoes" placeholder="ㅤ" selectedItemsLabel="{0} selecionados" [filter]="true" appendTo="body"></p-multiSelect>
                         <!-- <p-dropdown [options]="funcoes"  formControlName="funcoes" placeholder="Selecione" [filter]="true" appendTo="body"></p-dropdown> -->
                         <label>Funções</label>
                     </span>
                 </div>
-                <div class="field col-12 lg:col-12">
+                <div class="field col-12 lg:col-3">
                     <span class="p-float-label">
                         <p-multiSelect [options]="grupos" formControlName="grupos" placeholder="ㅤ" selectedItemsLabel="{0} selecionados" [filter]="true" appendTo="body"></p-multiSelect>
                         <!-- <p-dropdown [options]="grupos"  formControlName="grupos" placeholder="Selecione" [filter]="true" appendTo="body"></p-dropdown> -->
                         <label>Grupos</label>
                     </span>
                 </div>
-                <div class="field col-12 lg:col-12">
+                <div class="field col-12 lg:col-3">
                     <span class="p-float-label">
+                        <p-dropdown [options]="tipos"  formControlName="tipo" placeholder="Selecione" [filter]="true" appendTo="body"></p-dropdown>
+                        <label>Tipo</label>
+                    </span>
+                </div>
+                <div class="field col-12 lg:col-3">
+                    <span class="p-float-label q-focus">
                         <p-inputMask mask="99/99/9999" formControlName="conversaoData" placeholder="99/99/9999"></p-inputMask>
                         <label>Data de Conversão</label>
                     </span>
                 </div>
-                <div class="field col-12 lg:col-12">
-                    <span class="p-float-label">
+                <div class="field col-12 lg:col-3">
+                    <span class="p-float-label q-focus">
                         <p-inputMask mask="99/99/9999" formControlName="batismoData" placeholder="99/99/9999"></p-inputMask>
                         <label>Data de Batismo nas águas</label>
                     </span>
                 </div>
-                <div class="field col-12 lg:col-12">
-                    <span class="p-float-label">
+                <div class="field col-12 lg:col-3">
+                    <span class="p-float-label q-focus">
                         <p-inputMask mask="99/99/9999" formControlName="batismoData" placeholder="99/99/9999"></p-inputMask>
                         <label>Data de Consagração</label>
                     </span>
                 </div>
-                
+                <div class="field col-12 lg:col-3">
+                    <span class="p-float-label q-focus">
+                        <p-inputMask mask="99/99/9999" formControlName="ordenacaoData" placeholder="99/99/9999"></p-inputMask>
+                        <label>Data de ordenação</label>
+                    </span>
+                </div>
+                <div class="field col-12 lg:col-12">
+                    <span class="p-float-label">
+                        <input type="text" pInputText formControlName="acompanhadorNome">
+                        <label>Acompanhador</label>
+                    </span>
+                </div>
+                <div class="field col-12 lg:col-12">
+                    <span class="p-float-label">
+                        <input type="text" pInputText formControlName="discipuladorNome">
+                        <label>Discipulador</label>
+                    </span>
+                </div>
+                <div class="field col-12 lg:col-6">
+                    <p-checkbox [binary]="true" label="Convertido" formControlName="convertido"></p-checkbox>
+                </div>
+                <div class="field col-12 lg:col-6">
+                    <p-checkbox [binary]="true" label="Batizado" formControlName="batizado"></p-checkbox>
+                </div>
             </div>
         </p-tabPanel>
     </p-tabView>

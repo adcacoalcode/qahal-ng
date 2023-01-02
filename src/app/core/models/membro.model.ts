@@ -10,11 +10,11 @@ export class Membro {
   sexo?: string;
   nascimento?: Date;
   estadoCivil?: string;
-  naturalidade?: string; 
-  identidade?: string; 
+  naturalidade?: string;
+  identidade?: string;
   cpf?: string;
-  escolaridade?: string; 
-  profissao?: string; 
+  escolaridade?: string;
+  profissao?: string;
   inativo?: boolean;
   tipoSanguineo?: string;
   codigo?: string;
@@ -50,6 +50,9 @@ export class Membro {
   grupos?: Grupo[];
   funcoes?: Funcao[];
   cargo?: Cargo;
+  ordenacaoData?: Date;
+  acompanhadorNome?: string;
+  discipuladorNome?: string;
   //presencas?: Presenca[];
   //inscricoes?: Inscricao[];
   //reunioesResponsavel?: Reuniao[];
