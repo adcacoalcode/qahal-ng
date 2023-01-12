@@ -149,6 +149,7 @@ import { FuncaoModule } from './modules/funcao/funcao.module';
 import { GrupoModule } from './modules/grupo/grupo.module';
 import { MembroModule } from './modules/membro/membro.module';
 import { ReuniaoModule } from './modules/reuniao/reuniao.module';
+import { UsuarioModule } from './modules/usuario/usuario.module';
 
 @NgModule({
     imports: [
@@ -246,6 +247,7 @@ import { ReuniaoModule } from './modules/reuniao/reuniao.module';
         GrupoModule,
         MembroModule,
         ReuniaoModule,
+        UsuarioModule,
     ],
     declarations: [
         AppComponent,
