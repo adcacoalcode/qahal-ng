@@ -1,1 +1,27 @@
-<p>usuario-form works!</p>
+<form  (ngSubmit)="onSubmit()" autocomplete="off" [formGroup]="form">
+    <div class="grid p-fluid">
+        <div class="field col-12 md:col-12">
+            <span class="p-float-label">
+                <input type="text" pInputText formControlName="nome">
+                <label>Nome*</label>
+            </span>
+        </div>
+        <div class="field col-12 lg:col-12">
+            <span class="p-float-label">
+                <input type="email" pInputText formControlName="email">
+                <label>E-mail</label>
+            </span>
+        </div>
+        <div class="field col-12 lg:col-12">
+            <span class="p-float-label">
+                <input type="password" pInputText formControlName="password" [autocomplete]="false">
+                <label>Senha</label>
+            </span>
+        </div>
+    </div>
+    <div class="grid p-fluid justify-content-end">
+        <div class="col-2">
+            <button pButton type="submit" [disabled]="form.invalid || loading" label="Salvar" class="p-button-raised p-button-success" [disabled]="form.invalid"></button>
+        </div>
+    </div>
+</form>
