@@ -24,8 +24,8 @@ export class AuthInterceptor implements HttpInterceptor {
       // NÃO PASSAR TOKEN SE FOR DE TERCEIROS
       if (req.url.includes('viacep')) { // viacep, CID-10
         return next.handle(req);
-      }    
-  
+      }
+
       request = req.clone({
         headers: req.headers.set('Authorization', `Bearer ${token}`)
       });
@@ -49,6 +49,6 @@ export class AuthInterceptor implements HttpInterceptor {
         `Erro: ${JSON.stringify(error.error)}`);
     }
     // retornar um observable com uma mensagem amigavel.
-    return throwError('Ocorreu um erro, tente novamente');
+    return throwError(error);
   }
 }

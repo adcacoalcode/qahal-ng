@@ -17,6 +17,10 @@ export class UserService {
     return this.http.get(`${API_URL}${this.rota}`) as Observable<User[]>;
   }
 
+  getAllByIgrejagrupo(idIgrejaGrupo: number): Observable<User[]> {
+    return this.http.get(`${API_URL}${this.rota}/igrejagrupo/${idIgrejaGrupo}`) as Observable<User[]>;
+  }
+
   get(id: number): Observable<User> {
     return this.http.get(`${API_URL}${this.rota}/${id}`) as Observable<User>;
   }
