@@ -62,6 +62,10 @@ import { AuthGuard } from './core/guards/auth.guard';
                         path: 'reunioes',
                         loadChildren: () => import('./modules/reuniao/reuniao.module').then(m => m.ReuniaoModule)
                     },
+                    {
+                        path: 'usuarios',
+                        loadChildren: () => import('./modules/usuario/usuario.module').then(m => m.UsuarioModule)
+                    },
                     {path: 'uikit/formlayout', component: FormLayoutComponent},
                     {path: 'uikit/input', component: InputComponent},
                     {path: 'uikit/floatlabel', component: FloatLabelComponent},
