@@ -38,7 +38,6 @@
                         <ng-container *ngSwitchDefault>{{rowData[col.field]}}</ng-container>
                         <ng-container *ngSwitchCase="'acao'">
                             <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2" (click)="edit(rowData)"></button>
-                            <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning" (click)="delete(rowData)"></button>
                         </ng-container>
                     </ng-container>
                 </td>

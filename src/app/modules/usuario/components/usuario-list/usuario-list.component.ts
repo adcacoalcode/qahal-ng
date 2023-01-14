@@ -86,26 +86,4 @@ export class UsuarioListComponent implements OnInit {
       });
     }
 
-    delete(reg: User) {
-      this.confirmationService.confirm({
-        message: 'Tem certeza que deseja excluir esse registro?',
-        header: 'Confirmar',
-        icon: 'pi pi-exclamation-triangle',
-        acceptLabel: 'Sim',
-        rejectLabel: 'Não',
-        accept: () => {
-          this.regs = this.regs.filter(val => val.id !== reg.id);
-          this.service.delete(reg.id).subscribe({
-            next: () => {
-              this.messageService.add({ severity: 'success', summary: 'Sucesso', detail: 'Registro excluído com sucesso', life: 3000 });
-              this.updateUI();
-            },
-            error: () => {
-              this.messageService.add({ severity: 'error', summary: 'Erro', detail: 'Erro ao excluir registro', life: 3000 });
-            },
-          });
-        }
-      });
-    }
-
 }

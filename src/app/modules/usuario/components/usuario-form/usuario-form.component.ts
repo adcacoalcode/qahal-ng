@@ -21,6 +21,12 @@ export class UsuarioFormComponent implements OnInit {
   reg: User;
   loading: boolean = false;
 
+
+  selectedPermissionCargo: string[] = [];
+  selectedPermissionFuncao: string[] = [];
+  selectedPermissionGrupo: string[] = [];
+  selectedPermissionUsuario: string[] = [];
+
   constructor(
       private service: UserService,
       private ref: DynamicDialogRef,
@@ -59,11 +65,26 @@ export class UsuarioFormComponent implements OnInit {
       this.form.controls['igrejagrupo'].setValue(data.igrejagrupo);
       this.form.controls['email'].setValue(data.email);
       this.form.controls['password'].setValue(data.password);
+      this.selectedPermissionCargo = data.permissoes["CARGO"];
+      this.selectedPermissionFuncao = data.permissoes["FUNCAO"];
+      this.selectedPermissionGrupo = data.permissoes["GRUPO"];
+      this.selectedPermissionUsuario = data.permissoes["MEMBRO"];
   }
 
   formataRegistro() {
 
       this.reg = {...this.form.value};
+
+      this.reg.permissoes = {
+        "GRUPO": this.selectedPermissionGrupo,
+        "MEMBRO": this.selectedPermissionUsuario,
+        "CARGO": this.selectedPermissionCargo,
+        "FUNCAO": this.selectedPermissionFuncao,
+      }
+      if (!this.reg.password) {
+        delete this.reg.password;
+      }
+      console.log(this.reg)
   }
 
   onSubmit() {

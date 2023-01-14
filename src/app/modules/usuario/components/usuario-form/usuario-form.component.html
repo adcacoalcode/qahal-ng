@@ -1,24 +1,92 @@
 <form  (ngSubmit)="onSubmit()" autocomplete="off" [formGroup]="form">
-    <div class="grid p-fluid">
-        <div class="field col-12 md:col-12">
-            <span class="p-float-label">
-                <input type="text" pInputText formControlName="nome">
-                <label>Nome*</label>
-            </span>
-        </div>
-        <div class="field col-12 lg:col-12">
-            <span class="p-float-label">
-                <input type="email" pInputText formControlName="email">
-                <label>E-mail</label>
-            </span>
-        </div>
-        <div class="field col-12 lg:col-12">
-            <span class="p-float-label">
-                <input type="password" pInputText formControlName="password" [autocomplete]="false">
-                <label>Senha</label>
-            </span>
-        </div>
-    </div>
+    <p-tabView>
+        <p-tabPanel header="Dados">
+            <div class="grid p-fluid">
+                <div class="field col-12 md:col-12">
+                    <span class="p-float-label">
+                        <input type="text" pInputText formControlName="nome">
+                        <label>Nome*</label>
+                    </span>
+                </div>
+                <div class="field col-12 lg:col-12">
+                    <span class="p-float-label">
+                        <input type="email" pInputText formControlName="email">
+                        <label>E-mail</label>
+                    </span>
+                </div>
+                <div class="field col-12 lg:col-12">
+                    <span class="p-float-label">
+                        <input type="password" pInputText formControlName="password" [autocomplete]="false">
+                        <label>Senha</label>
+                    </span>
+                </div>
+            </div>
+        </p-tabPanel>
+        <p-tabPanel header="Permissões">
+            <div class="grid p-fluid">
+                <div class="field col-12 md:col-3">
+                    <h5>Cargos</h5>
+                    <div class="field-checkbox">
+                        <p-checkbox name="group1" value="V" [(ngModel)]="selectedPermissionCargo" [ngModelOptions]="{standalone: true}" inputId="VisualizarCargos"></p-checkbox>
+                        <label for="VisualizarCargos">Visualizar</label>
+                    </div>
+                    <div class="field-checkbox">
+                        <p-checkbox name="group1" value="A" [(ngModel)]="selectedPermissionCargo" [ngModelOptions]="{standalone: true}" inputId="AlterarCargos"></p-checkbox>
+                        <label for="AlterarCargos">Alterar</label>
+                    </div>
+                    <div class="field-checkbox">
+                        <p-checkbox name="group1" value="D" [(ngModel)]="selectedPermissionCargo" [ngModelOptions]="{standalone: true}" inputId="DeletarCargos"></p-checkbox>
+                        <label for="DeletarCargos">Deletar</label>
+                    </div>
+                </div>
+                <div class="field col-12 md:col-3">
+                    <h5>Funções</h5>
+                    <div class="field-checkbox">
+                        <p-checkbox name="group1" value="V" [(ngModel)]="selectedPermissionFuncao" [ngModelOptions]="{standalone: true}" inputId="VisualizarFuncoes"></p-checkbox>
+                        <label for="VisualizarFuncoes">Visualizar</label>
+                    </div>
+                    <div class="field-checkbox">
+                        <p-checkbox name="group1" value="A" [(ngModel)]="selectedPermissionFuncao" [ngModelOptions]="{standalone: true}" inputId="AlterarFuncoes"></p-checkbox>
+                        <label for="AlterarFuncoes">Alterar</label>
+                    </div>
+                    <div class="field-checkbox">
+                        <p-checkbox name="group1" value="D" [(ngModel)]="selectedPermissionFuncao" [ngModelOptions]="{standalone: true}" inputId="DeletarFuncoes"></p-checkbox>
+                        <label for="DeletarFuncoes">Deletar</label>
+                    </div>
+                </div>
+                <div class="field col-12 md:col-3">
+                    <h5>Grupos</h5>
+                    <div class="field-checkbox">
+                        <p-checkbox name="group1" value="V" [(ngModel)]="selectedPermissionGrupo" [ngModelOptions]="{standalone: true}" inputId="VisualizarGrupo"></p-checkbox>
+                        <label for="VisualizarGrupo">Visualizar</label>
+                    </div>
+                    <div class="field-checkbox">
+                        <p-checkbox name="group1" value="A" [(ngModel)]="selectedPermissionGrupo" [ngModelOptions]="{standalone: true}" inputId="AlterarGrupo"></p-checkbox>
+                        <label for="AlterarGrupo">Alterar</label>
+                    </div>
+                    <div class="field-checkbox">
+                        <p-checkbox name="group1" value="D" [(ngModel)]="selectedPermissionGrupo" [ngModelOptions]="{standalone: true}" inputId="DeletarGrupo"></p-checkbox>
+                        <label for="DeletarGrupo">Deletar</label>
+                    </div>
+                </div>
+                <div class="field col-12 md:col-3">
+                    <h5>Usuários</h5>
+                    <div class="field-checkbox">
+                        <p-checkbox name="group1" value="V" [(ngModel)]="selectedPermissionUsuario" [ngModelOptions]="{standalone: true}" inputId="VisualizarUsuario"></p-checkbox>
+                        <label for="VisualizarUsuario">Visualizar</label>
+                    </div>
+                    <div class="field-checkbox">
+                        <p-checkbox name="group1" value="A" [(ngModel)]="selectedPermissionUsuario" [ngModelOptions]="{standalone: true}" inputId="AlterarUsuario"></p-checkbox>
+                        <label for="AlterarUsuario">Alterar</label>
+                    </div>
+                    <div class="field-checkbox">
+                        <p-checkbox name="group1" value="D" [(ngModel)]="selectedPermissionUsuario" [ngModelOptions]="{standalone: true}" inputId="DeletarUsuario"></p-checkbox>
+                        <label for="DeletarUsuario">Deletar</label>
+                    </div>
+                </div>
+            </div>
+        </p-tabPanel>
+    </p-tabView>
     <div class="grid p-fluid justify-content-end">
         <div class="col-2">
             <button pButton type="submit" [disabled]="form.invalid || loading" label="Salvar" class="p-button-raised p-button-success" [disabled]="form.invalid"></button>
